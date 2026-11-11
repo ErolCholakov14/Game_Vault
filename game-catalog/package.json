@@ -1,0 +1,13 @@
+{
+  "name": "gamevault",
+  "version": "2.0.0",
+  "description": "GameVault – каталог за компютърни игри с потребители и база данни (SQLite)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --no-warnings server.js",
+    "dev": "node --no-warnings --watch server.js",
+    "reset-db": "node -e \"require('fs').rmSync('data/gamevault.db',{force:true});console.log('Базата е изтрита. Стартирайте отново сървъра.')\""
+  },
+  "engines": { "node": ">=22.13.0" },
+  "license": "MIT"
+}

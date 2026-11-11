@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>GameVault – Каталог за компютърни игри</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Начален блок (Hero) ===== -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand"><span class="logo" aria-hidden="true">▶</span>GameVault</div>
+        <div id="user-area" class="user-area"></div>
+      </div>
+      <h1>Открий следващата си <em>любима игра</em></h1>
+      <p>Каталог с подробна информация, упътвания и оценки от потребители за компютърни игри.</p>
+      <div class="stats">
+        <div><b id="stat-games">0</b>игри</div>
+        <div><b id="stat-studios">0</b>студиа</div>
+        <div><b id="stat-rating">–</b>среден рейтинг</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Търсене и филтри ===== -->
+  <div class="bar">
+    <div class="wrap">
+      <section class="filters" aria-label="Търсене и филтри">
+        <div class="field">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="search" type="search" placeholder="Търси по име на игра…" aria-label="Търсене по име">
+        </div>
+        <select id="filter-studio" aria-label="Производител">
+          <option value="">Всички производители</option>
+        </select>
+        <select id="filter-rating" aria-label="Минимален рейтинг">
+          <option value="0">Всеки рейтинг</option>
+          <option value="4.5">4.5 и нагоре</option>
+          <option value="4">4.0 и нагоре</option>
+          <option value="3.5">3.5 и нагоре</option>
+        </select>
+        <button id="btn-reset" type="button">Изчисти</button>
+      </section>
+    </div>
+  </div>
+
+  <!-- ===== Каталог ===== -->
+  <main class="wrap">
+    <div id="notice" class="notice" hidden></div>
+    <p id="result-count" aria-live="polite"></p>
+    <div id="game-list" class="grid"></div>
+  </main>
+
+  <footer>
+    <div class="wrap">GameVault · учебен проект · данните се пазят в SQLite база данни</div>
+  </footer>
+
+  <!-- ===== Прозорец с детайли за игра ===== -->
+  <dialog id="game-dialog"><div id="dialog-body"></div></dialog>
+
+  <!-- ===== Прозорец за вход / регистрация ===== -->
+  <dialog id="auth-dialog"><div id="auth-body" class="body"></div></dialog>
+
+  <!-- Скриптове (редът е важен) -->
+  <script src="js/utils.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
